@@ -46,34 +46,16 @@ public class MazeAssignment
 
     private static int ReadOddDimension(string prompt)
     {
-        int value;
-        while (true)
-        {
-            Console.Write(prompt);
-            if (int.TryParse(Console.ReadLine(), out value) && value >= 5)
-            {
-                if (value % 2 == 0)
-                {
-                    value++; // Convert even inputs to odd automatically
-                    Console.WriteLine($"--> Grid dimensions must be odd. Adjusting to {value}.");
-                }
-                return value;
-            }
-            Console.WriteLine("Invalid input. Please enter an integer >= 5.");
-        }
+        // TODO: Prompt user for input and validate integer input >= 5
+        // TODO: Ensure input is an odd number (if even, adjust or re-prompt)
+        return 0;
     }
 
     private static int ReadMaxSteps(int rows, int cols)
     {
-        int defaultSteps = rows * cols;
-        Console.Write($"Enter max steps for path search (Press Enter for default {defaultSteps}): ");
-        string input = Console.ReadLine();
-
-        if (int.TryParse(input, out int steps) && steps > 0)
-        {
-            return steps;
-        }
-        return defaultSteps;
+        // TODO: Prompt user for max steps limit
+        // TODO: Parse input and handle blank/default input (default to rows * cols)
+        return 0;
     }
 
     public static char[,] GenerateMaze(int rows, int cols)
